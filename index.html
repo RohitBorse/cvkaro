@@ -563,6 +563,58 @@ select.inp{appearance:none;-webkit-appearance:none;background-image:linear-gradi
   .toast{bottom:calc(94px + env(safe-area-inset-bottom,0px))}
 }
 @media (prefers-reduced-motion:reduce){.stk.got .stk-badge{animation:none}}
+
+/* ===== Fresher mode ===== */
+#v-fresher{--p:0;position:relative;min-height:calc(100vh - 64px);padding:36px 16px 70px;background:linear-gradient(180deg,#1B1F3F 0%,#2E3380 22%,#6A4C8C 42%,#C9677A 60%,#FF9F6B 80%,#FFE6C7 100%);background-size:100% 340%;background-position:0 calc(var(--p) * 100%);transition:background-position 1s cubic-bezier(.2,.7,.2,1)}
+#v-fresher.on{display:block}
+#v-fresher .sky{position:absolute;inset:0;opacity:calc(1 - var(--p) * 1.4);transition:opacity 1s}
+.fz-card{position:relative;max-width:760px;margin:0 auto;background:var(--paper);color:var(--ink);border-radius:26px;padding:28px 30px;box-shadow:0 30px 70px -30px rgba(0,0,0,.55)}
+.fz-dots{display:flex;gap:6px;margin-bottom:20px}
+.fz-dots span{flex:1;height:6px;border-radius:99px;background:var(--line);transition:background .4s}
+.fz-dots .done{background:var(--saff)}
+.fz-dots .now{background:var(--mari)}
+.fz-say{display:flex;gap:12px;align-items:flex-start;margin-bottom:22px}
+.fz-say svg{flex:none}
+.fz-bub{background:var(--dawn);color:#1B1F3F;border-radius:4px 20px 20px 20px;padding:13px 18px;flex:1}
+.fz-bub b{display:block;font-family:"Baloo 2",system-ui,sans-serif;font-size:clamp(22px,3vw,29px);line-height:1.15}
+.fz-bub span{display:block;margin-top:4px;color:#4A4560;font-size:15px}
+.fz-fields{display:grid;gap:12px}
+.fz-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.fz-chip{border:1.5px solid var(--line);background:var(--paper);color:var(--ink);border-radius:99px;padding:7px 14px;font-weight:600;font-size:14px;transition:background .15s,border-color .15s}
+.fz-chip:hover{border-color:var(--saff)}
+.fz-chip.on{border-color:var(--saff);background:color-mix(in srgb,var(--saff) 18%,var(--paper))}
+.fz-chip.big{padding:14px 22px;font-size:16px}
+.fz-yn{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+.fz-sub{border:1.5px dashed var(--line);border-radius:14px;padding:14px;display:grid;gap:10px}
+.fz-subh{display:flex;justify-content:space-between;font-weight:700;font-size:13px;color:var(--muted)}
+.fz-check{display:flex;gap:8px;align-items:center;font-weight:600;font-size:14px;cursor:pointer}
+.fz-check input{width:18px;height:18px;accent-color:var(--saff)}
+.fz-add{display:flex;gap:8px;margin-top:14px}
+.fz-nav{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:22px;padding-top:18px;border-top:1px solid var(--line)}
+.fz-step{color:var(--muted);font-size:13.5px;font-weight:600}
+.fz-err{color:var(--danger);font-size:14px;margin:10px 0 0;min-height:0}
+.fz-err:empty{display:none}
+.fz-welcome{display:grid;gap:10px;justify-items:start}
+.fz-welcome .btn{white-space:normal;text-align:left}
+.fz-alt{color:var(--muted);font-size:14.5px;margin-top:4px}
+.fz-tpl{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.fz-t{border:2.5px solid var(--line);border-radius:14px;background:var(--paper);padding:8px;display:grid;gap:6px;font-size:14px;color:var(--ink)}
+.fz-t.on{border-color:var(--saff);box-shadow:0 0 0 4px rgba(255,138,61,.18)}
+.fz-t .thumb{border:0}
+.fz-row{display:flex;gap:8px}
+textarea[data-fz="summary"]{min-height:150px!important}
+.fz-hero{display:inline-block;margin-top:18px;color:#FFD7B8;text-decoration:none;font-size:15px}
+.fz-hero b{color:#fff;text-decoration:underline;text-underline-offset:3px}
+.importbar.fz-entry{border-color:var(--saff);background:color-mix(in srgb,var(--saff) 12%,var(--paper))}
+.stickers{grid-template-columns:repeat(auto-fill,minmax(96px,1fr))!important}
+@media (max-width:600px){.fz-card{padding:20px 16px;border-radius:20px}.fz-say svg{width:46px;height:auto}.fz-step{display:none}.fz-tpl{grid-template-columns:repeat(2,1fr)}.fz-add{flex-wrap:wrap}}
+
+.lang{border:1.5px solid var(--line);background:var(--paper);color:var(--ink);border-radius:99px;padding:6px 14px;font-weight:700;font-size:14px;font-family:"Baloo 2","Plus Jakarta Sans",system-ui,sans-serif;line-height:1.2}
+.lang:hover{border-color:var(--saff)}
+body{font-family:"Plus Jakarta Sans","Baloo 2",system-ui,-apple-system,"Segoe UI",sans-serif}
+.lang-hi .hero.night h1,.lang-hi .sec-head h2,.lang-hi .ch-txt h3,.lang-hi .phero h1{letter-spacing:0;line-height:1.15}
+.lang-hi .hero.night h1{font-size:clamp(40px,5.4vw,70px)}
+@media (max-width:420px){.lang{padding:5px 10px;font-size:13px}}
 #printArea{display:none}
 @media print{
   body>*:not(#printArea){display:none!important}
@@ -798,6 +850,7 @@ select.inp{appearance:none;-webkit-appearance:none;background-image:linear-gradi
       <a href="#/#pricing" data-nav="pricing">Pricing</a>
     </nav>
     <span class="grow"></span>
+    <button class="lang" id="langBtn" type="button" aria-label="हिंदी में देखें">हिंदी</button>
     <a href="#/builder" class="btn primary sm" style="padding:9px 16px">Build my resume</a>
   </div>
 </header>
@@ -816,6 +869,7 @@ select.inp{appearance:none;-webkit-appearance:none;background-image:linear-gradi
           <a href="#/builder" class="btn saff lg">Start my CV, free</a>
           <a href="#/ats" class="btn ghost-l lg">Check my ATS score</a>
         </div>
+        <a href="#/fresher" class="fz-hero">🎓 Pehli baar CV bana rahe ho? <b>Try Fresher mode →</b></a>
         <div class="assure">
           <span>✓ 16 templates</span><span>✓ Free PDF download</span><span>✓ Upload your old resume</span>
         </div>
@@ -844,7 +898,7 @@ select.inp{appearance:none;-webkit-appearance:none;background-image:linear-gradi
       <div class="sec-head"><span class="kicker dark">Tum akele nahi ho</span><h2>Sound familiar?</h2><p>Every student hits these walls. Here's how CVkaro helps you get past them.</p></div>
       <div class="sgrid">
         <div class="scard"><p class="q">"50 applications. Zero calls."</p><p>Applicant tracking software often rejects resumes before a human sees them. Our ATS checker shows you why, and what to change.</p><a href="#/ats">Check my resume →</a></div>
-        <div class="scard"><p class="q">"Fresher hoon, kya likhun?"</p><p>No experience? Projects, internships and college activities count. Insert proven bullet points for students and add your own numbers.</p><a href="#/builder">Try the builder →</a></div>
+        <div class="scard"><p class="q">"Fresher hoon, kya likhun?"</p><p>No experience? Projects, internships and college activities count. Insert proven bullet points for students and add your own numbers.</p><a href="#/fresher">Try Fresher mode →</a></div>
         <div class="scard"><p class="q">"Formatting mein hi raat nikal gayi."</p><p>Stop fighting with Word margins at midnight. Every template handles the design, so you only type. Switch styles any time.</p><a href="#/templates">See templates →</a></div>
         <div class="scard"><p class="q">"Photo lagaun ya nahi?"</p><p>Photos are common for jobs in India and the Gulf, but not for the US or UK. Add one in a click, and we'll tell you when to leave it out.</p><a href="#/builder">Add my details →</a></div>
       </div>
@@ -946,6 +1000,12 @@ select.inp{appearance:none;-webkit-appearance:none;background-image:linear-gradi
       </div>
     </div>
   </section>
+</main>
+
+<!-- FRESHER MODE -->
+<main id="v-fresher" class="view">
+  <div class="sky" data-stars="34" aria-hidden="true"></div>
+  <div class="fz-card" id="fzCard"></div>
 </main>
 
 <!-- TEMPLATES -->
@@ -1396,7 +1456,7 @@ function renderContent(){
     return `<details class="fs" data-sec="${key}" ${openSec[key]?"open":""}><summary><span class="chev"></span><span class="sp">${title}</span>${o}</summary><div class="fs-body">${body}</div></details>`;
   };
   const blank=!R.name&&!R.summary&&!R.experience.some(filled);
-  let h = blank?`<div class="importbar"><div><strong>Already have a resume?</strong><div class="help">Import it and we'll fill in the sections for you.</div></div><label class="btn sm brand filebtn" id="bImp">Import<input type="file" accept=".pdf,.docx,.txt"></label></div><div class="help" id="bImpStatus" aria-live="polite"></div>`:"";
+  let h = blank?`<div class="importbar fz-entry"><div><strong>🎓 Fresher? Pehli baar CV?</strong><div class="help">Answer simple questions one at a time and we'll build it for you.</div></div><a class="btn sm saff" href="#/fresher">Fresher mode</a></div><div class="importbar"><div><strong>Already have a resume?</strong><div class="help">Import it and we'll fill in the sections for you.</div></div><label class="btn sm brand filebtn" id="bImp">Import<input type="file" accept=".pdf,.docx,.txt"></label></div><div class="help" id="bImpStatus" aria-live="polite"></div>`:"";
   h += box("contact","Personal details",`
     <div class="r2">${input("name","Full name",R.name,"Aarav Sharma")}${input("role","Job title",R.role,"Frontend Developer")}</div>
     <div class="r2">${input("email","Email",R.email,"you@email.com","email")}${input("phone","Phone",R.phone,"+91 …","tel")}</div>
@@ -1706,7 +1766,7 @@ function jdKeywords(jd){
 function guessTitle(jd){
   const first=jd.split("\n").map(s=>s.trim()).find(Boolean)||"";
   const m=jd.match(/(?:job title|position|role)\s*[:\-]\s*([^\n]{3,60})/i)||jd.match(/(?:hiring|looking for|seeking)\s+(?:an?\s+)?(?:experienced\s+|talented\s+|skilled\s+)?([A-Z][\w./+-]*(?:\s+[A-Z][\w./+-]*){0,4})/);
-  if(m) return m[1].replace(/\s+(to|who|with|in|at)\b.*$/i,"").trim();
+  if(m) return m[1].split(/\.\s|\.$|,|;/)[0].replace(/\s+(to|who|with|in|at|for|and)\b.*$/i,"").trim();
   if(first.split(" ").length<=7 && !/[.:]$/.test(first)) return first;
   return "";
 }
@@ -2338,7 +2398,8 @@ const STICKERS=[
   {id:"import",e:"♻️",n:"Purane se naya",d:"Import an old resume",c:"#5B8CFF"},
   {id:"multi",e:"📁",n:"Har job ke liye alag",d:"Keep 3 or more resumes",c:"#B07CFF"},
   {id:"night-owl",e:"🦉",n:"Night Owl",d:"Work on your CV after midnight",c:"#343A86"},
-  {id:"tailor",e:"✂️",n:"Tailor-made",d:"Tailor your resume to a job",c:"#E8805F"}
+  {id:"tailor",e:"✂️",n:"Tailor-made",d:"Tailor your resume to a job",c:"#E8805F"},
+  {id:"fresher",e:"🎓",n:"Pehla kadam",d:"Finish Fresher mode",c:"#0F766E"}
 ];
 function earned(){ try{ return JSON.parse(localStorage.getItem("cvk-stickers")||"{}"); }catch{ return {}; } }
 function award(id){
@@ -2452,8 +2513,10 @@ const TOUR=[
 ];
 let tourI=-1;
 $("bTour").onclick=()=>startTour(true);
+function resumeBlank(){ return !R.name.trim()&&!R.summary.trim()&&!R.experience.some(filled)&&!R.projects.some(filled)&&!R.education.some(filled); }
 function startTour(force){
-  if(!force){ try{ if(localStorage.getItem("cvk-tour")) return; }catch{ return; } }
+  if(tourI>=0) return;
+  if(!force&&!resumeBlank()) return;
   tourI=0; showTour();
 }
 function showTour(){
@@ -2468,17 +2531,229 @@ function showTour(){
   $("tourSkip").onclick=()=>{ tourI=TOUR.length; showTour(); };
 }
 
+
+/* ================= PHASE 2: FRESHER MODE ================= */
+const FZ_ROLES={
+  "Software Developer":["Java","Python","C++","JavaScript","SQL","Git","Data Structures and Algorithms","OOP","HTML","CSS","React","Node.js","REST APIs","Linux"],
+  "Web Developer":["HTML","CSS","JavaScript","React","Node.js","Tailwind","Git","REST APIs","MongoDB","Responsive Design","Bootstrap","Figma"],
+  "Data Analyst":["Excel","SQL","Python","Power BI","Tableau","Statistics","Pandas","Data Visualization","Google Sheets","NumPy"],
+  "Marketing":["Digital Marketing","SEO","Social Media","Content Writing","Canva","Google Analytics","Email Marketing","Copywriting","Meta Ads"],
+  "Sales / Business Development":["Sales","Negotiation","CRM","Lead Generation","MS Excel","Presentation","Cold Calling","Customer Service"],
+  "Accounting / Finance":["Tally","GST","MS Excel","Accounting","Taxation","Financial Analysis","Bookkeeping","Auditing"],
+  "HR / Recruitment":["Recruitment","MS Office","Onboarding","Employee Engagement","Payroll","Interviewing","HR Policies"],
+  "Graphic Designer":["Figma","Canva","Photoshop","Illustrator","UI/UX","Typography","Branding","Adobe XD"],
+  "Mechanical Engineer":["AutoCAD","SolidWorks","CATIA","MATLAB","Manufacturing","GD&T","ANSYS"],
+  "Teacher / Trainer":["Lesson Planning","Classroom Management","MS Office","Online Teaching","Curriculum Design"]
+};
+const FZ_SOFT=["Communication","Teamwork","Problem Solving","Leadership","Time Management","Adaptability"];
+const FZ_ACH=["Hackathon participant","NSS / NCC volunteer","Class representative","College fest organiser","Sports team member","NPTEL certification","Coursera certification","Google certification","Coding contest ranking","Scholarship holder","Paper presentation","Club coordinator"];
+const FZ_STEPS=["welcome","basics","contact","education","projects","experience","skills","achievements","summary","template"];
+const FZ_EMPTY=()=>({step:0,name:"",role:"",email:"",phone:"",location:"",links:"",edu:[{degree:"",school:"",dates:"",score:""}],edu2:false,
+  projects:[{name:"",tech:"",what:"",result:""}],hasExp:null,exp:{title:"",org:"",dates:"",what:""},skills:[],customSkill:"",ach:[],achOther:"",summary:"",summaryTouched:false,template:"fresher"});
+let FZ=(()=>{ try{ const s=JSON.parse(localStorage.getItem("cvk-fresher")||"null"); if(s) return {...FZ_EMPTY(),...s}; }catch{} return FZ_EMPTY(); })();
+const fzSave=()=>{ try{ localStorage.setItem("cvk-fresher",JSON.stringify(FZ)); }catch{} };
+function fzSet(path,val){ const a=path.split("."); let o=FZ; for(let i=0;i<a.length-1;i++) o=o[isNaN(a[i])?a[i]:+a[i]]; o[a[a.length-1]]=val; fzSave(); }
+function fzGet(path){ return path.split(".").reduce((o,k)=>o==null?o:o[isNaN(k)?k:+k],FZ); }
+const fzIn=(path,label,ph,type="text")=>`<label class="f">${label}<input class="inp" data-fz="${path}" type="${type}" value="${esc(fzGet(path)||"")}" placeholder="${esc(ph||"")}"></label>`;
+const fzTa=(path,label,ph)=>`<label class="f">${label}<textarea class="inp" data-fz="${path}" placeholder="${esc(ph||"")}" style="min-height:72px">${esc(fzGet(path)||"")}</textarea></label>`;
+function fzDraftSummary(){
+  const e=FZ.edu[0]||{}, yrs=(String(e.dates).match(/(19|20)\d{2}/g)||[]).map(Number), last=yrs.length?Math.max(...yrs):0;
+  const status=last&&last>=new Date().getFullYear()?"student":"graduate";
+  const deg=e.degree.trim(), sk=FZ.skills.filter(s=>!FZ_SOFT.includes(s)).slice(0,3), pr=FZ.projects.filter(p=>p.name.trim());
+  let s=deg?`${deg} ${status}${e.school.trim()?` from ${e.school.trim()}`:""}`:`Motivated ${status}`;
+  if(sk.length) s+=` with hands-on experience in ${sk.length>1?sk.slice(0,-1).join(", ")+" and "+sk[sk.length-1]:sk[0]}`;
+  s+=".";
+  if(FZ.hasExp&&FZ.exp.title.trim()) s+=` Completed ${/intern/i.test(FZ.exp.title)?"an internship":"work"} as ${FZ.exp.title.trim()}${FZ.exp.org.trim()?` at ${FZ.exp.org.trim()}`:""}.`;
+  if(pr.length) s+=` Built ${pr.length>1?`${pr.length} projects, including`:"a project called"} ${pr[0].name.trim()}${pr[0].tech.trim()?` (${pr[0].tech.trim()})`:""}.`;
+  s+=` Looking for an entry-level ${FZ.role||"role"}${FZ.role?" role":""} to learn, contribute and grow.`;
+  return s.replace(/\s+/g," ").trim();
+}
+function fzRender(){
+  const v=$("fzCard"); if(!v) return;
+  const i=FZ.step, key=FZ_STEPS[i], n=FZ_STEPS.length-1;
+  $("v-fresher").style.setProperty("--p",(i/n).toFixed(3));
+  const dots=FZ_STEPS.slice(1).map((_,k)=>`<span class="${k+1<i?"done":k+1===i?"now":""}"></span>`).join("");
+  const say=(q,sub,pose)=>`<div class="fz-say">${ART.mascot(pose||"wave",62)}<div class="fz-bub"><b>${q}</b>${sub?`<span>${sub}</span>`:""}</div></div>`;
+  let body="";
+  if(key==="welcome") body=say("Pehli baar CV bana rahe ho?","No problem. Answer a few simple questions, one at a time, and CVkaro builds your CV for you. It takes about 5 minutes.","cheer")+
+    `<div class="fz-welcome"><button class="btn saff lg" data-go="1">Haan, shuru karein →</button><a class="btn lg" href="#/builder">I have work experience, use the full builder</a><a class="fz-alt" href="#/resumes">Or import your old resume</a></div>`;
+  if(key==="basics") body=say("Aapka naam kya hai?","And which job are you aiming for?")+
+    `<div class="fz-fields">${fzIn("name","Full name","e.g. Priya Patil")}
+     <div class="f">Job you want<div class="fz-chips">${Object.keys(FZ_ROLES).map(r=>`<button class="fz-chip ${FZ.role===r?"on":""}" data-role="${esc(r)}">${esc(r)}</button>`).join("")}</div></div>
+     ${fzIn("role","Or type your own","e.g. Civil Engineer, Content Writer")}</div>`;
+  if(key==="contact") body=say("Recruiters aapse kaise contact karein?","Use a professional email. Your phone with +91 works best.")+
+    `<div class="fz-fields"><div class="r2">${fzIn("email","Email","firstname.lastname@gmail.com","email")}${fzIn("phone","Phone","+91 98765 43210","tel")}</div>${fzIn("location","City, state","Pune, Maharashtra")}${fzIn("links","LinkedIn / GitHub (optional)","linkedin.com/in/yourname")}</div>`;
+  if(key==="education") body=say("Padhai ke baare mein batao 📚","Your latest degree first. Add 12th or diploma too if you're a fresher.")+
+    `<div class="fz-fields">${fzIn("edu.0.degree","Degree / course","B.Tech, Computer Science")}${fzIn("edu.0.school","College / university","Savitribai Phule Pune University")}
+     <div class="r2">${fzIn("edu.0.dates","Years","2022 – 2026")}${fzIn("edu.0.score","CGPA / percentage","8.2 CGPA")}</div>
+     <label class="fz-check"><input type="checkbox" id="fzEdu2" ${FZ.edu2?"checked":""}> Add 12th / diploma</label>
+     ${FZ.edu2?`<div class="fz-sub">${fzIn("edu.1.degree","Class / course","Class XII (HSC), Science")}${fzIn("edu.1.school","School / board","Maharashtra State Board")}<div class="r2">${fzIn("edu.1.dates","Year","2022")}${fzIn("edu.1.score","Percentage","86%")}</div></div>`:""}</div>`;
+  if(key==="projects") body=say("Koi project kiya hai? 🛠️","College projects, mini projects and personal projects all count. Recruiters love them for freshers.")+
+    `<div class="fz-fields">${FZ.projects.map((p,k)=>`<div class="fz-sub"><div class="fz-subh">Project ${k+1}${k?`<button class="link danger" data-delp="${k}">Remove</button>`:""}</div>
+      <div class="r2">${fzIn(`projects.${k}.name`,"Project name","e.g. Library Management System")}${fzIn(`projects.${k}.tech`,"Tools used","e.g. Java, MySQL")}</div>
+      ${fzTa(`projects.${k}.what`,"What does it do? What did you build?","e.g. Built a web app where students can search and issue library books")}
+      ${fzIn(`projects.${k}.result`,"Result or number (optional)","e.g. Used by 200+ students in our college")}</div>`).join("")}
+      ${FZ.projects.length<3?`<button class="btn sm" id="fzAddP" style="justify-self:start">+ Add another project</button>`:""}</div>`;
+  if(key==="experience") body=say("Internship ya part-time kaam kiya hai?","Internships, freelancing, tuition or part-time jobs all count. It's fine if you haven't, so just skip.")+
+    `<div class="fz-yn"><button class="fz-chip big ${FZ.hasExp===true?"on":""}" data-exp="1">Haan, kiya hai</button><button class="fz-chip big ${FZ.hasExp===false?"on":""}" data-exp="0">Nahi, abhi tak nahi</button></div>
+     ${FZ.hasExp?`<div class="fz-fields"><div class="r2">${fzIn("exp.title","Role","e.g. Web Development Intern")}${fzIn("exp.org","Company / organisation","e.g. TechNova Solutions")}</div>${fzIn("exp.dates","Dates","Jun 2025 – Aug 2025")}${fzTa("exp.what","What did you do? (one point per line)","e.g. Built 5 web pages for the company website\nFixed 20+ bugs reported by users")}</div>`:""}`;
+  if(key==="skills"){ const base=FZ_ROLES[FZ.role]||FZ_ROLES["Software Developer"]; const all=[...new Set([...base,...FZ_SOFT,...FZ.skills])];
+    body=say("Aapki skills kya hain? 💪",`Tap the ones you really know${FZ.role&&FZ_ROLES[FZ.role]?` (suggested for ${FZ.role})`:""}. 8 to 15 is a good number.`)+
+    `<div class="fz-chips">${all.map(s=>`<button class="fz-chip ${FZ.skills.includes(s)?"on":""}" data-sk="${esc(s)}">${FZ.skills.includes(s)?"✓ ":""}${esc(s)}</button>`).join("")}</div>
+     <div class="fz-add"><input class="inp" id="fzSkillIn" placeholder="Add another skill and press Enter"><button class="btn sm" id="fzSkillAdd">Add</button></div>
+     <p class="help" id="fzSkillCount">${FZ.skills.length} selected</p>`; }
+  if(key==="achievements") body=say("Kuch aur jo aapko special banata hai? ⭐","Certificates, competitions, volunteering, leadership. Tap any that apply.")+
+    `<div class="fz-chips">${FZ_ACH.map(a=>`<button class="fz-chip ${FZ.ach.includes(a)?"on":""}" data-ach="${esc(a)}">${FZ.ach.includes(a)?"✓ ":""}${esc(a)}</button>`).join("")}</div>
+     <div class="fz-fields">${fzTa("achOther","Add details or anything else (one per line)","e.g. Won 2nd prize at Smart India Hackathon 2025\nNPTEL Java certificate with Elite grade")}</div>`;
+  if(key==="summary"){ if(!FZ.summaryTouched||!FZ.summary) FZ.summary=fzDraftSummary();
+    body=say("Yeh raha aapka summary ✍️","We wrote it from your answers. Read it, and change anything that doesn't sound like you.","thumb")+
+    `<div class="fz-fields">${fzTa("summary","Professional summary","")}<div class="fz-row"><button class="btn sm" id="fzRedraft">↻ Write it again from my answers</button></div></div>`; }
+  if(key==="template") body=say("Last step! Template chuno 🎨","All four are great for freshers. You can change it any time later.","cheer")+
+    `<div class="fz-tpl">${["fresher","scholar","modern","dev"].map(t=>`<button class="fz-t ${FZ.template===t?"on":""}" data-tpl="${t}"><div class="thumb" data-thumb="${t}" data-sample="1"></div><b>${TEMPLATES.find(x=>x.id===t).name}</b></button>`).join("")}</div>`;
+  const nav=key==="welcome"?"":`<div class="fz-nav"><button class="btn" data-go="${i-1}">← Back</button><span class="fz-step">Step ${i} of ${n}</span>${key==="template"?`<button class="btn saff" id="fzFinish">Mera CV banao 🎉</button>`:`<button class="btn saff" data-go="${i+1}">${["experience","achievements","projects"].includes(key)?"Next (or skip)":"Next"} →</button>`}</div>`;
+  v.innerHTML=`${key==="welcome"?"":`<div class="fz-dots" aria-hidden="true">${dots}</div>`}${body}<p class="fz-err" id="fzErr" role="alert"></p>${nav}`;
+  v.querySelectorAll("[data-thumb]").forEach(fillThumb);
+  fzBind();
+  const first=v.querySelector("input.inp,textarea.inp"); if(first&&key!=="summary"&&!matchMedia("(max-width:760px)").matches) first.focus({preventScroll:true});
+}
+function fzBind(){
+  const v=$("fzCard");
+  v.querySelectorAll("[data-fz]").forEach(el=>el.addEventListener("input",()=>{ fzSet(el.dataset.fz,el.value); if(el.dataset.fz==="summary") FZ.summaryTouched=true; if(el.dataset.fz==="role") v.querySelectorAll("[data-role]").forEach(b=>b.classList.toggle("on",b.dataset.role===el.value)); fzSave(); }));
+  v.querySelectorAll("[data-go]").forEach(b=>b.onclick=()=>{ const to=+b.dataset.go; if(to>FZ.step&&!fzValid()) return; FZ.step=Math.max(0,to); fzSave(); fzRender(); $("v-fresher").scrollIntoView({behavior:"smooth"}); });
+  v.querySelectorAll("[data-role]").forEach(b=>b.onclick=()=>{ FZ.role=b.dataset.role; fzSave(); fzRender(); });
+  v.querySelectorAll("[data-sk]").forEach(b=>b.onclick=()=>{ const s=b.dataset.sk; FZ.skills=FZ.skills.includes(s)?FZ.skills.filter(x=>x!==s):[...FZ.skills,s]; fzSave(); b.classList.toggle("on"); b.textContent=(FZ.skills.includes(s)?"✓ ":"")+s; $("fzSkillCount").textContent=`${FZ.skills.length} selected`; });
+  v.querySelectorAll("[data-ach]").forEach(b=>b.onclick=()=>{ const s=b.dataset.ach; FZ.ach=FZ.ach.includes(s)?FZ.ach.filter(x=>x!==s):[...FZ.ach,s]; fzSave(); b.classList.toggle("on"); b.textContent=(FZ.ach.includes(s)?"✓ ":"")+s; });
+  v.querySelectorAll("[data-exp]").forEach(b=>b.onclick=()=>{ FZ.hasExp=b.dataset.exp==="1"; fzSave(); fzRender(); });
+  v.querySelectorAll("[data-tpl]").forEach(b=>b.onclick=()=>{ FZ.template=b.dataset.tpl; fzSave(); v.querySelectorAll("[data-tpl]").forEach(x=>x.classList.toggle("on",x===b)); });
+  v.querySelectorAll("[data-delp]").forEach(b=>b.onclick=()=>{ FZ.projects.splice(+b.dataset.delp,1); fzSave(); fzRender(); });
+  const ap=$("fzAddP"); if(ap) ap.onclick=()=>{ FZ.projects.push({name:"",tech:"",what:"",result:""}); fzSave(); fzRender(); };
+  const e2=$("fzEdu2"); if(e2) e2.onchange=()=>{ FZ.edu2=e2.checked; if(FZ.edu2&&!FZ.edu[1]) FZ.edu[1]={degree:"",school:"",dates:"",score:""}; fzSave(); fzRender(); };
+  const si=$("fzSkillIn"), add=()=>{ const val=si.value.split(",").map(x=>x.trim()).filter(Boolean); if(!val.length) return; FZ.skills=[...new Set([...FZ.skills,...val])]; fzSave(); fzRender(); setTimeout(()=>$("fzSkillIn")?.focus(),0); };
+  if(si){ si.onkeydown=e=>{ if(e.key==="Enter"){ e.preventDefault(); add(); } }; $("fzSkillAdd").onclick=add; }
+  const rd=$("fzRedraft"); if(rd) rd.onclick=()=>{ FZ.summary=fzDraftSummary(); FZ.summaryTouched=false; fzSave(); fzRender(); };
+  const fin=$("fzFinish"); if(fin) fin.onclick=fzFinish;
+}
+function fzValid(){
+  const key=FZ_STEPS[FZ.step], err=m=>{ $("fzErr").textContent=m; return false; };
+  if(key==="basics"&&!FZ.name.trim()) return err("Please enter your name to continue.");
+  if(key==="contact"&&FZ.email.trim()&&!/^[\w.+-]+@[\w-]+\.[\w.]{2,}$/.test(FZ.email.trim())) return err("This email looks incomplete. Please check it.");
+  return true;
+}
+function fzFinish(){
+  const D=EMPTY();
+  D.name=FZ.name.trim(); D.role=FZ.role.trim(); D.email=FZ.email.trim(); D.phone=FZ.phone.trim(); D.location=FZ.location.trim(); D.links=FZ.links.trim();
+  D.summary=FZ.summary.trim();
+  D.education=(FZ.edu2?FZ.edu:[FZ.edu[0]]).filter(filled).map(e=>({...e}));
+  if(!D.education.length) D.education=EMPTY().education;
+  D.projects=FZ.projects.filter(p=>p.name.trim()||p.what.trim()).map(p=>({name:p.name.trim(),tech:p.tech.trim(),link:"",bullets:[p.what.trim(),p.result.trim()].filter(Boolean).join("\n")}));
+  if(!D.projects.length) D.projects=EMPTY().projects;
+  D.experience=FZ.hasExp&&(FZ.exp.title.trim()||FZ.exp.what.trim())?[{title:FZ.exp.title.trim(),org:FZ.exp.org.trim(),dates:FZ.exp.dates.trim(),place:"",bullets:FZ.exp.what.trim()}]:EMPTY().experience;
+  D.skills=FZ.skills.join(", ");
+  D.achievements=[...FZ.ach,...lines(FZ.achOther)].join("\n");
+  D.order=["summary","education","projects","experience","skills","achievements"];
+  D.template=FZ.template; D.photo="";
+  const cur=normalize(curDoc().data), used=cur.name||cur.summary||cur.experience.some(filled)||cur.projects.some(filled);
+  if(used){ const id=uid(); DB.docs.push({id,name:"Fresher CV",updated:Date.now(),data:normalize(D)}); openDoc(id); }
+  else { R=normalize(D); curDoc().name=curDoc().name==="My resume"?"Fresher CV":curDoc().name; save(); persist(); }
+  try{ localStorage.removeItem("cvk-fresher"); }catch{} FZ=FZ_EMPTY();
+  try{ localStorage.setItem("cvk-tour","1"); }catch{}
+  award("fresher");
+  location.hash="#/builder";
+  setTimeout(()=>{ celebrate(); toast("Shabash! 🎉 Your CV is ready. Check each section, then download your PDF."); },500);
+}
+
+
+/* ================= PHASE 2: HINDI SWITCH ================= */
+const HI={"Templates": "टेम्पलेट्स", "ATS checker": "ATS चेकर", "Cover letters": "कवर लेटर", "My resumes": "मेरे रिज़्यूमे", "Pricing": "कीमत", "Build my resume": "मेरा CV बनाएँ", "CV banao. Shortlist ho jao.": "CV बनाओ। शॉर्टलिस्ट हो जाओ।", "Raat bhar ki mehnat.": "रात भर की मेहनत।", "Ek perfect CV.": "एक परफ़ेक्ट CV।", "All those late nights, projects and practice tests deserve to be seen. CVkaro turns your hard work into a resume that gets you shortlisted. Free, no sign-up, made for India.": "वो सारी देर रात की पढ़ाई, प्रोजेक्ट्स और प्रैक्टिस टेस्ट्स दिखने चाहिए। CVkaro आपकी मेहनत को ऐसे रिज़्यूमे में बदलता है जो आपको शॉर्टलिस्ट कराए। मुफ़्त, बिना साइन-अप, भारत के लिए बना।", "Start my CV, free": "मेरा CV शुरू करें, मुफ़्त", "Check my ATS score": "मेरा ATS स्कोर देखें", "🎓 Pehli baar CV bana rahe ho?": "🎓 पहली बार CV बना रहे हो?", "Try Fresher mode →": "फ्रेशर मोड आज़माएँ →", "✓ 16 templates": "✓ 16 टेम्पलेट्स", "✓ Free PDF download": "✓ मुफ़्त PDF डाउनलोड", "✓ Upload your old resume": "✓ पुराना रिज़्यूमे अपलोड करें", "Follow the journey": "सफ़र देखें", "Har job seeker ki kahani": "हर जॉब सीकर की कहानी", "From 2 AM study sessions to \"You're selected!\"": "रात 2 बजे की पढ़ाई से \"आपका सिलेक्शन हो गया!\" तक", "Every job seeker walks the same road. CVkaro walks it with you, one chapter at a time.": "हर जॉब सीकर एक ही रास्ते पर चलता है। CVkaro हर अध्याय में आपके साथ चलता है।", "Chapter 1 · The late nights": "अध्याय 1 · देर रातें", "Raat 2 baje ki taiyari": "रात 2 बजे की तैयारी", "DSA, aptitude, projects, internships. You've put in the hours, often with just a lamp and a cup of chai for company. All that work deserves to be seen.": "DSA, एप्टीट्यूड, प्रोजेक्ट्स, इंटर्नशिप। आपने घंटों मेहनत की है, अक्सर बस एक लैंप और चाय के कप के साथ। वो सारी मेहनत दिखनी चाहिए।", "Chapter 2 · Build it": "अध्याय 2 · बनाइए", "CV banao, minutes mein": "CV बनाओ, मिनटों में", "Pick from 16 templates, import your old resume, and use ready-made bullet points when you don't know what to write. No design skills needed.": "16 टेम्पलेट्स में से चुनें, पुराना रिज़्यूमे इम्पोर्ट करें, और समझ न आए तो तैयार पॉइंट्स इस्तेमाल करें। डिज़ाइन आना ज़रूरी नहीं।", "Start building →": "बनाना शुरू करें →", "Chapter 3 · The robot test": "अध्याय 3 · रोबोट की परीक्षा", "ATS ka imtihaan": "ATS का इम्तिहान", "Most companies use software to filter resumes before a person reads them. Paste the job description and see your match score, missing keywords and exactly what to fix.": "ज़्यादातर कंपनियाँ इंसान के पढ़ने से पहले सॉफ़्टवेयर से रिज़्यूमे छाँटती हैं। जॉब डिस्क्रिप्शन पेस्ट करें और अपना मैच स्कोर, छूटे हुए कीवर्ड और क्या सुधारना है, देखें।", "Check my score →": "मेरा स्कोर देखें →", "Chapter 4 · The nervous wait": "अध्याय 4 · घबराहट भरा इंतज़ार", "Interview ka intezaar": "इंटरव्यू का इंतज़ार", "Walk in prepared, with a clean PDF that reads perfectly on every job portal and a cover letter in the same design. Nervous is normal. Unprepared isn't.": "पूरी तैयारी के साथ जाएँ: हर जॉब पोर्टल पर ठीक से पढ़ा जाने वाला साफ़ PDF और उसी डिज़ाइन में कवर लेटर। घबराहट नॉर्मल है, बिना तैयारी के जाना नहीं।", "Write my cover letter →": "मेरा कवर लेटर लिखें →", "Chapter 5 · The best call": "अध्याय 5 · सबसे अच्छा कॉल", "Selected! 🎉": "सिलेक्शन हो गया! 🎉", "The call you've been waiting for, and the one your family has been waiting for too. We'd love for CVkaro to be a small part of your story.": "वो कॉल जिसका आपको इंतज़ार था, और आपके परिवार को भी। हमें अच्छा लगेगा अगर CVkaro आपकी कहानी का छोटा सा हिस्सा बने।", "Tum akele nahi ho": "तुम अकेले नहीं हो", "Sound familiar?": "जाना-पहचाना लगता है?", "Every student hits these walls. Here's how CVkaro helps you get past them.": "हर स्टूडेंट को इन मुश्किलों का सामना करना पड़ता है। CVkaro ऐसे मदद करता है।", "\"50 applications. Zero calls.\"": "\"50 एप्लीकेशन। एक भी कॉल नहीं।\"", "Applicant tracking software often rejects resumes before a human sees them. Our ATS checker shows you why, and what to change.": "ATS सॉफ़्टवेयर अक्सर इंसान के देखने से पहले ही रिज़्यूमे रिजेक्ट कर देता है। हमारा ATS चेकर बताता है क्यों, और क्या बदलना है।", "Check my resume →": "मेरा रिज़्यूमे जाँचें →", "\"Fresher hoon, kya likhun?\"": "\"फ्रेशर हूँ, क्या लिखूँ?\"", "No experience? Projects, internships and college activities count. Insert proven bullet points for students and add your own numbers.": "अनुभव नहीं है? प्रोजेक्ट्स, इंटर्नशिप और कॉलेज की गतिविधियाँ भी गिनी जाती हैं। स्टूडेंट्स के लिए तैयार पॉइंट्स डालें और अपने नंबर जोड़ें।", "\"Formatting mein hi raat nikal gayi.\"": "\"फ़ॉर्मैटिंग में ही रात निकल गई।\"", "Stop fighting with Word margins at midnight. Every template handles the design, so you only type. Switch styles any time.": "आधी रात को Word के मार्जिन से लड़ना बंद करें। हर टेम्पलेट डिज़ाइन संभालता है, आपको बस लिखना है। स्टाइल कभी भी बदलें।", "See templates →": "टेम्पलेट्स देखें →", "\"Photo lagaun ya nahi?\"": "\"फ़ोटो लगाऊँ या नहीं?\"", "Photos are common for jobs in India and the Gulf, but not for the US or UK. Add one in a click, and we'll tell you when to leave it out.": "भारत और खाड़ी देशों की नौकरियों में फ़ोटो आम है, पर US या UK में नहीं। एक क्लिक में जोड़ें, और कब न लगाएँ यह हम बताएँगे।", "Add my details →": "मेरी जानकारी जोड़ें →", "Templates recruiters actually like to read": "ऐसे टेम्पलेट्स जो रिक्रूटर्स को पढ़ना पसंद है", "Clear hierarchy, sensible spacing and real text that software can parse — no tables or images hiding your experience.": "साफ़ क्रम, सही स्पेसिंग और असली टेक्स्ट जिसे सॉफ़्टवेयर पढ़ सके — कोई टेबल या इमेज आपका अनुभव नहीं छिपाती।", "ATS-friendly": "ATS-फ़्रेंडली", "Use this template": "यह टेम्पलेट इस्तेमाल करें", "Best for design roles": "डिज़ाइन रोल्स के लिए बढ़िया", "See all templates": "सभी टेम्पलेट्स देखें", "Bold colour header with contact details alongside.": "रंगीन हेडर, साथ में कॉन्टैक्ट डिटेल्स।", "Dates down the side so your career reads at a glance.": "साइड में तारीख़ें, ताकि आपका करियर एक नज़र में दिखे।", "Striking dark sidebar for contact and skills.": "कॉन्टैक्ट और स्किल्स के लिए आकर्षक डार्क साइडबार।", "Everything you need to apply with confidence": "भरोसे के साथ अप्लाई करने के लिए सब कुछ", "ATS match score for any job": "किसी भी जॉब के लिए ATS मैच स्कोर", "Paste a job description and see which keywords you already have, which are missing, and how your resume scores on structure and impact.": "जॉब डिस्क्रिप्शन पेस्ट करें और देखें कौन-से कीवर्ड आपके पास हैं, कौन-से छूटे हैं, और स्ट्रक्चर व असर में आपका रिज़्यूमे कैसा है।", "Keyword match": "कीवर्ड मैच", "Measurable impact": "नापने लायक असर", "Action verbs": "एक्शन वर्ब्स", "Private by design": "पूरी तरह प्राइवेट", "Your resume is saved in your own browser. We don't store it on a server, and there's no account to create.": "आपका रिज़्यूमे आपके अपने ब्राउज़र में सेव होता है। हम इसे सर्वर पर नहीं रखते, और कोई अकाउंट नहीं बनाना पड़ता।", "Bullet points that sound professional": "प्रोफ़ेशनल लगने वाले पॉइंट्स", "Insert proven phrases for software, data, marketing, sales and students, then fill in your own numbers.": "सॉफ़्टवेयर, डेटा, मार्केटिंग, सेल्स और स्टूडेंट्स के लिए तैयार वाक्य डालें, फिर अपने नंबर भरें।", "Tailored to every job": "हर जॉब के हिसाब से", "Paste a job description and AI suggests a sharper summary, the best order for your skills and stronger bullet points. Apply the ones you like with one click.": "जॉब डिस्क्रिप्शन पेस्ट करें और AI बेहतर समरी, स्किल्स का सही क्रम और मज़बूत पॉइंट्स सुझाता है। जो पसंद आएँ, एक क्लिक में लगाएँ।", "Matching cover letters": "मैच करते कवर लेटर", "Write a cover letter in the same design as your resume, starting from a proven structure or an AI draft based on your experience.": "अपने रिज़्यूमे के डिज़ाइन में कवर लेटर लिखें, तैयार ढाँचे से या आपके अनुभव पर बने AI ड्राफ़्ट से शुरू करके।", "A resume for every role": "हर रोल के लिए अलग रिज़्यूमे", "Keep separate versions for different jobs and switch between them in a click.": "अलग-अलग जॉब्स के लिए अलग वर्ज़न रखें और एक क्लिक में बदलें।", "Make it yours": "इसे अपना बनाएँ", "Switch templates at any time without retyping. Choose an accent colour and tighten spacing to fit one page.": "बिना दोबारा लिखे कभी भी टेम्पलेट बदलें। रंग चुनें और एक पेज में फ़िट करने के लिए स्पेसिंग कम करें।", "Paisa vasool": "पैसा वसूल", "Simple pricing": "आसान कीमत", "Build and download as many resumes as you like for free. Pro adds AI help for when you want a second opinion.": "जितने चाहें रिज़्यूमे मुफ़्त में बनाएँ और डाउनलोड करें। Pro में AI की मदद मिलती है, जब आपको दूसरी राय चाहिए।", "Free": "फ़्री", "Forever": "हमेशा के लिए", "All 16 templates": "सभी 16 टेम्पलेट्स", "Unlimited resumes and PDF downloads": "अनलिमिटेड रिज़्यूमे और PDF डाउनलोड", "Cover letter builder": "कवर लेटर बिल्डर", "ATS keyword match score": "ATS कीवर्ड मैच स्कोर", "Bullet point suggestions": "पॉइंट्स के सुझाव", "Start building": "बनाना शुरू करें", "/ month": "/ महीना", "Coming soon": "जल्द आ रहा है", "Everything in Free": "फ़्री का सब कुछ", "AI resume review with rewrites": "AI रिज़्यूमे रिव्यू और सुधार", "Tailor your resume to any job": "किसी भी जॉब के हिसाब से रिज़्यूमे बदलें", "AI summary and cover letter writer": "AI समरी और कवर लेटर राइटर", "Questions, answered": "आपके सवाल, हमारे जवाब", "Can I upload the resume I already have?": "क्या मैं अपना पुराना रिज़्यूमे अपलोड कर सकता हूँ?", "Yes. Upload a PDF or Word file on the ATS checker to score it, or import it into the builder and CVkaro fills in each section for you. Your file is read on your device.": "हाँ। स्कोर देखने के लिए ATS चेकर पर PDF या Word फ़ाइल अपलोड करें, या बिल्डर में इम्पोर्ट करें और CVkaro हर सेक्शन भर देगा। आपकी फ़ाइल आपके डिवाइस पर ही पढ़ी जाती है।", "What is an ATS, and why does it matter?": "ATS क्या है, और यह ज़रूरी क्यों है?", "An applicant tracking system is software companies use to collect and filter job applications. It reads your resume, pulls out your details and compares your skills against the job. If it can't read your resume, or your resume doesn't use the job's keywords, a recruiter may never see it.": "ATS (एप्लीकेंट ट्रैकिंग सिस्टम) वह सॉफ़्टवेयर है जिससे कंपनियाँ जॉब एप्लीकेशन इकट्ठा और फ़िल्टर करती हैं। यह आपका रिज़्यूमे पढ़ता है और आपकी स्किल्स को जॉब से मिलाता है। अगर यह आपका रिज़्यूमे पढ़ न पाए, या उसमें जॉब के कीवर्ड न हों, तो शायद रिक्रूटर उसे कभी न देखे।", "Is CVkaro really free?": "क्या CVkaro सच में मुफ़्त है?", "Yes. All templates, downloads and the ATS keyword score are free with no sign-up.": "हाँ। सभी टेम्पलेट्स, डाउनलोड और ATS कीवर्ड स्कोर बिना साइन-अप के मुफ़्त हैं।", "AI-powered Pro features are coming soon.": "AI वाले Pro फ़ीचर्स जल्द आ रहे हैं।", "Will my resume work on Naukri, LinkedIn and company career sites?": "क्या मेरा रिज़्यूमे Naukri, LinkedIn और कंपनी साइट्स पर चलेगा?", "Yes. Downloads are PDFs with real, selectable text, which job portals and applicant tracking systems can read. For the most cautious systems, pick a template marked \"ATS-friendly\".": "हाँ। डाउनलोड होने वाले PDF में असली टेक्स्ट होता है, जिसे जॉब पोर्टल्स और ATS पढ़ सकते हैं। सबसे सुरक्षित रहने के लिए \"ATS-फ़्रेंडली\" वाला टेम्पलेट चुनें।", "Where is my data stored?": "मेरा डेटा कहाँ सेव होता है?", "In your own browser on this device. If you clear your browser data or switch devices, download your resume first. See our privacy policy for details.": "इसी डिवाइस पर आपके ब्राउज़र में। ब्राउज़र डेटा साफ़ करने या डिवाइस बदलने से पहले अपना रिज़्यूमे डाउनलोड कर लें। ज़्यादा जानकारी के लिए प्राइवेसी पॉलिसी देखें।", "Should my resume be one page?": "क्या मेरा रिज़्यूमे एक पेज का होना चाहिए?", "For students and people with under five years of experience, one page is best. Use the Spacing slider in the Design tab to fit more on a page, and the builder shows a line where a new page starts.": "स्टूडेंट्स और 5 साल से कम अनुभव वालों के लिए एक पेज सबसे अच्छा है। ज़्यादा फ़िट करने के लिए डिज़ाइन टैब में स्पेसिंग स्लाइडर इस्तेमाल करें; नया पेज कहाँ शुरू होता है, बिल्डर लाइन से दिखाता है।", "Chapter 6 is yours": "अध्याय 6 आपका है", "Aapka \"Selected\" moment wait kar raha hai.": "आपका \"सिलेक्शन\" वाला पल इंतज़ार कर रहा है।", "Your selected moment is waiting. Start your CV tonight. It's free, and it takes minutes.": "आज रात ही अपना CV शुरू करें। मुफ़्त है, और बस कुछ मिनट लगते हैं।", "Start my CV": "मेरा CV शुरू करें", "Build an ATS-ready resume, check it against any job, and apply with confidence. Free to use, no sign-up.": "ATS के लिए तैयार रिज़्यूमे बनाएँ, किसी भी जॉब से मिलाकर जाँचें, और भरोसे से अप्लाई करें। मुफ़्त, बिना साइन-अप।", "Product": "प्रोडक्ट", "Resume builder": "रिज़्यूमे बिल्डर", "Resources": "जानकारी", "How we score": "हम स्कोर कैसे देते हैं", "FAQ": "सवाल-जवाब", "Company": "कंपनी", "About": "हमारे बारे में", "Contact": "संपर्क", "Support CVkaro ♥": "CVkaro को सपोर्ट करें ♥", "Privacy policy": "प्राइवेसी पॉलिसी", "Terms of use": "उपयोग की शर्तें", "© 2026 CVkaro. All rights reserved.": "© 2026 CVkaro. सर्वाधिकार सुरक्षित।", "Free and private.": "मुफ़्त और प्राइवेट।", "Support the project ♥": "प्रोजेक्ट को सपोर्ट करें ♥", "Apna style chuno": "अपना स्टाइल चुनो", "Resume templates": "रिज़्यूमे टेम्पलेट्स", "16 professionally designed templates, from traditional to creative. Every one uses real, selectable text, and you can switch at any time without retyping.": "पारंपरिक से क्रिएटिव तक, 16 प्रोफ़ेशनल टेम्पलेट्स। सबमें असली टेक्स्ट है, और आप बिना दोबारा लिखे कभी भी बदल सकते हैं।", "All": "सभी", "Simple": "सादा", "Modern": "मॉडर्न", "Creative": "क्रिएटिव", "For freshers": "फ्रेशर्स के लिए", "Tech": "टेक", "Timeless serif layout for any industry.": "हर इंडस्ट्री के लिए क्लासिक लेआउट।", "Clean sans-serif with a colour accent.": "साफ़ डिज़ाइन, हल्के रंग के साथ।", "Traditional academic format, dense and formal.": "पारंपरिक अकादमिक फ़ॉर्मैट, कसा हुआ और औपचारिक।", "Friendly layout that makes projects and skills shine.": "दोस्ताना लेआउट जो प्रोजेक्ट्स और स्किल्स को चमकाता है।", "Confident header band for senior roles.": "सीनियर रोल्स के लिए दमदार हेडर।", "Elegant serif with refined, centred headings.": "सुंदर, बीच में रखे शीर्षकों वाला लेआउट।", "A big, confident name and bold section titles.": "बड़ा नाम और बोल्ड सेक्शन टाइटल।", "Code-inspired details for software roles.": "सॉफ़्टवेयर रोल्स के लिए कोड जैसा स्टाइल।", "Your initials as a personal logo.": "आपके नाम के पहले अक्षर, एक लोगो की तरह।", "Airy layout with headings in the margin.": "खुला लेआउट, शीर्षक किनारे पर।", "Tighter spacing to fit more on one page.": "कम स्पेसिंग ताकि एक पेज में ज़्यादा आए।", "Two columns with a soft side panel.": "दो कॉलम, हल्के साइड पैनल के साथ।", "Wide main column with a skills panel on the right.": "चौड़ा मुख्य कॉलम, दाईं ओर स्किल्स पैनल।", "Robot ka imtihaan": "रोबोट का इम्तिहान", "ATS resume checker": "ATS रिज़्यूमे चेकर", "Upload your resume or use one you built here, paste the job description, and get a match score, missing keywords and specific fixes.": "अपना रिज़्यूमे अपलोड करें या यहाँ बनाया हुआ चुनें, जॉब डिस्क्रिप्शन पेस्ट करें, और मैच स्कोर, छूटे कीवर्ड और सुधार पाएँ।", "Your resume and the job": "आपका रिज़्यूमे और जॉब", "Check a resume you built here, or upload the one you already have.": "यहाँ बनाया रिज़्यूमे जाँचें, या अपना पुराना अपलोड करें।", "Resume I built": "मेरा बनाया रिज़्यूमे", "Upload my resume": "रिज़्यूमे अपलोड करें", "Which resume": "कौन-सा रिज़्यूमे", "My resume": "मेरा रिज़्यूमे", "Drop your resume here or click to upload": "रिज़्यूमे यहाँ डालें या अपलोड के लिए क्लिक करें", "PDF, Word (.docx) or text · up to 10 MB · read on your device": "PDF, Word (.docx) या टेक्स्ट · 10 MB तक · आपके डिवाइस पर ही पढ़ा जाता है", "Or paste resume text": "या रिज़्यूमे का टेक्स्ट पेस्ट करें", "Job title": "जॉब टाइटल", "Job description": "जॉब डिस्क्रिप्शन", "Check my score": "मेरा स्कोर देखें", "Your score, matched keywords and suggested fixes will appear here.": "आपका स्कोर, मिलते कीवर्ड और सुझाव यहाँ दिखेंगे।", "Dil se likho": "दिल से लिखो", "Cover letter": "कवर लेटर", "A letter in the same design as your resume. Write it yourself, start from a template, or let AI draft it from your experience.": "आपके रिज़्यूमे के डिज़ाइन में लेटर। खुद लिखें, टेम्पलेट से शुरू करें, या AI से अपने अनुभव पर ड्राफ़्ट बनवाएँ।", "Edit resume": "रिज़्यूमे बदलें", "Download PDF": "PDF डाउनलोड करें", "Job title you're applying for": "जिस जॉब के लिए अप्लाई कर रहे हैं", "Hiring manager's name (optional)": "हायरिंग मैनेजर का नाम (वैकल्पिक)", "AI writing assistant": "AI लेखन सहायक", "AI writing is coming soon. For now, use the starter template below — it builds a first draft from your resume.": "AI लेखन जल्द आ रहा है। अभी नीचे दिया स्टार्टर टेम्पलेट इस्तेमाल करें — यह आपके रिज़्यूमे से पहला ड्राफ़्ट बना देता है।", "or write it yourself": "या खुद लिखें", "Use a starter template": "स्टार्टर टेम्पलेट इस्तेमाल करें", "Your letter (leave a blank line between paragraphs)": "आपका लेटर (पैराग्राफ़ों के बीच एक खाली लाइन छोड़ें)", "Keep it under 350 words.": "350 शब्दों से कम रखें।", "Matches your resume design": "आपके रिज़्यूमे के डिज़ाइन से मैच करता है", "Har job ke liye alag CV": "हर जॉब के लिए अलग CV", "Keep a version for each kind of job. Everything is saved in this browser, so download a PDF before you clear your browser data or switch devices.": "हर तरह की जॉब के लिए अलग वर्ज़न रखें। सब कुछ इसी ब्राउज़र में सेव है, इसलिए ब्राउज़र डेटा साफ़ करने या डिवाइस बदलने से पहले PDF डाउनलोड कर लें।", "Your stickers": "आपके स्टिकर्स", "New resume": "नया रिज़्यूमे", "Import existing resume": "पुराना रिज़्यूमे इम्पोर्ट करें", "PDF, Word or text": "PDF, Word या टेक्स्ट", "Open": "खोलें", "Duplicate": "कॉपी बनाएँ", "Delete": "हटाएँ", "Pehla CV": "पहला CV", "Download your first resume PDF": "अपना पहला रिज़्यूमे PDF डाउनलोड करें", "Poora CV": "पूरा CV", "Reach 100% on your CV journey": "CV सफ़र में 100% तक पहुँचें", "ATS 80+ Club": "ATS 80+ क्लब", "Score 80 or more on the ATS checker": "ATS चेकर पर 80 या ज़्यादा स्कोर करें", "Cover Letter Pro": "कवर लेटर प्रो", "Download a cover letter": "एक कवर लेटर डाउनलोड करें", "Purane se naya": "पुराने से नया", "Import an old resume": "पुराना रिज़्यूमे इम्पोर्ट करें", "Har job ke liye alag": "हर जॉब के लिए अलग", "Keep 3 or more resumes": "3 या ज़्यादा रिज़्यूमे रखें", "Night Owl": "नाइट आउल", "Work on your CV after midnight": "आधी रात के बाद CV पर काम करें", "Tailor-made": "टेलर-मेड", "Tailor your resume to a job": "रिज़्यूमे को जॉब के हिसाब से बदलें", "Pehla kadam": "पहला कदम", "Finish Fresher mode": "फ्रेशर मोड पूरा करें", "Unlocked": "मिल गया", "New sticker unlocked!": "नया स्टिकर मिला!", "Help keep CVkaro free": "CVkaro को मुफ़्त रखने में मदद करें", "CVkaro is free for everyone, with no sign-up. If it helped you get an interview, a small contribution helps pay for hosting and the AI features.": "CVkaro सबके लिए मुफ़्त है, बिना साइन-अप। अगर इससे आपको इंटरव्यू मिला, तो एक छोटा सा योगदान होस्टिंग और AI फ़ीचर्स का खर्च उठाने में मदद करता है।", "Choose an amount": "रकम चुनें", "A cup of chai": "एक कप चाय", "A coffee": "एक कॉफ़ी", "A meal": "एक खाना", "Super supporter": "सुपर सपोर्टर", "Or enter your own (₹)": "या अपनी रकम लिखें (₹)", "Scan with any UPI app — Google Pay, PhonePe, Paytm or your bank's app.": "किसी भी UPI ऐप से स्कैन करें — Google Pay, PhonePe, Paytm या बैंक का ऐप।", "Pay with UPI app": "UPI ऐप से पे करें", "Copy": "कॉपी", "Contributions are voluntary and go to the person who runs CVkaro. They aren't charitable donations and aren't tax-deductible. Everything on CVkaro stays free either way.": "योगदान अपनी मर्ज़ी से है और CVkaro चलाने वाले व्यक्ति को जाता है। यह चैरिटी दान नहीं है और टैक्स में छूट नहीं मिलती। CVkaro पर सब कुछ हर हाल में मुफ़्त रहेगा।", "Where your support goes": "आपका सपोर्ट कहाँ जाता है", "Hosting and domain": "होस्टिंग और डोमेन", "to keep the site fast and online": "ताकि साइट तेज़ और ऑनलाइन रहे", "AI costs": "AI का खर्च", "for resume reviews, tailoring and cover letters": "रिज़्यूमे रिव्यू, टेलरिंग और कवर लेटर के लिए", "New templates and features": "नए टेम्पलेट्स और फ़ीचर्स", "that users ask for": "जो यूज़र्स माँगते हैं", "Free ways to help": "मदद के मुफ़्त तरीके", "Share CVkaro with a friend": "CVkaro दोस्त के साथ शेयर करें", "Send feedback or report a bug": "सुझाव भेजें या बग बताएँ", "Contact us": "हमसे संपर्क करें", "Found a bug, have an idea, or want to work with us? We read every message.": "कोई बग मिला, कोई आइडिया है, या साथ काम करना चाहते हैं? हम हर मैसेज पढ़ते हैं।", "Send us a message": "हमें मैसेज भेजें", "This opens your email app with your message ready to send.": "इससे आपका ईमेल ऐप मैसेज के साथ खुल जाएगा, बस भेज दें।", "Your name": "आपका नाम", "Your email": "आपका ईमेल", "Topic": "विषय", "Bug report": "बग रिपोर्ट", "Feature idea": "फ़ीचर आइडिया", "Feedback": "सुझाव", "Help with my resume": "रिज़्यूमे में मदद", "Partnership or business": "साझेदारी या बिज़नेस", "Something else": "कुछ और", "Message": "मैसेज", "Open in email app": "ईमेल ऐप में खोलें", "Email": "ईमेल", "Copy email address": "ईमेल पता कॉपी करें", "Quick answers": "फटाफट जवाब", "Like CVkaro?": "CVkaro पसंद आया?", "Edit": "एडिट", "Design": "डिज़ाइन", "Preview": "प्रीव्यू", "‹ My resumes": "‹ मेरे रिज़्यूमे", "Saved": "सेव हो गया", "Saving…": "सेव हो रहा है…", "Use example": "उदाहरण देखें", "Start over": "फिर से शुरू करें", "ATS check": "ATS जाँच", "? Help": "? मदद", "Content": "जानकारी", "🎓 Fresher? Pehli baar CV?": "🎓 फ्रेशर? पहली बार CV?", "Answer simple questions one at a time and we'll build it for you.": "एक-एक करके आसान सवालों के जवाब दें, CV हम बना देंगे।", "Fresher mode": "फ्रेशर मोड", "Already have a resume?": "पहले से रिज़्यूमे है?", "Import it and we'll fill in the sections for you.": "इम्पोर्ट करें, सेक्शन हम भर देंगे।", "Import": "इम्पोर्ट", "Personal details": "निजी जानकारी", "Full name": "पूरा नाम", "Phone": "फ़ोन", "City, country": "शहर, देश", "Links (separate with commas)": "लिंक्स (कॉमा से अलग करें)", "Photo (optional)": "फ़ोटो (वैकल्पिक)", "None": "कोई नहीं", "Add photo": "फ़ोटो जोड़ें", "Change": "बदलें", "Remove": "हटाएँ", "Photos are common for jobs in India and the Gulf. Leave it out for the US, UK and Canada, where recruiters prefer resumes without photos.": "भारत और खाड़ी देशों की नौकरियों में फ़ोटो आम है। US, UK और कनाडा के लिए न लगाएँ, वहाँ बिना फ़ोटो वाला रिज़्यूमे पसंद किया जाता है।", "Summary": "समरी", "2–3 sentences about you": "अपने बारे में 2–3 वाक्य", "Include the job title you're targeting — recruiters and ATS software search for it.": "जिस जॉब के लिए अप्लाई कर रहे हैं उसका नाम लिखें — रिक्रूटर्स और ATS इसे ढूँढते हैं।", "Experience": "अनुभव", "Dates": "तारीख़ें", "Location": "जगह", "Key achievements (one per line)": "मुख्य उपलब्धियाँ (हर लाइन में एक)", "+ Suggest bullet points": "+ पॉइंट्स सुझाएँ", "+ Add position": "+ पद जोड़ें", "Projects": "प्रोजेक्ट्स", "Project name": "प्रोजेक्ट का नाम", "Tools and tech": "टूल्स और टेक", "Link": "लिंक", "Highlights (one per line)": "मुख्य बातें (हर लाइन में एक)", "+ Add project": "+ प्रोजेक्ट जोड़ें", "Education": "शिक्षा", "Degree or course": "डिग्री या कोर्स", "College or school": "कॉलेज या स्कूल", "Years": "साल", "CGPA or percentage": "CGPA या प्रतिशत", "+ Add qualification": "+ योग्यता जोड़ें", "Skills": "स्किल्स", "Skills (separate with commas)": "स्किल्स (कॉमा से अलग करें)", "Use the same wording as job postings. \"JavaScript\" and \"JS\" count as different words to most ATS.": "जॉब पोस्टिंग जैसे ही शब्द इस्तेमाल करें। ज़्यादातर ATS के लिए \"JavaScript\" और \"JS\" अलग शब्द हैं।", "Achievements": "उपलब्धियाँ", "Awards and certifications (one per line)": "अवॉर्ड और सर्टिफ़िकेट (हर लाइन में एक)", "Write with AI": "AI से लिखें", "Template": "टेम्पलेट", "Accent colour": "रंग", "Spacing and text size": "स्पेसिंग और टेक्स्ट साइज़", "Fit more on a page": "एक पेज में ज़्यादा", "Roomier": "खुला-खुला", "This template is ATS-friendly.": "यह टेम्पलेट ATS-फ़्रेंडली है।", "Click to add, then replace the [brackets] with your own details.": "जोड़ने के लिए क्लिक करें, फिर [ब्रैकेट] में अपनी जानकारी भरें।", "Students": "स्टूडेंट्स", "Raat 2 baje 🌙": "रात 2 बजे 🌙", "Taiyari jaari hai 📚": "तैयारी जारी है 📚", "Subah hone wali hai 🌄": "सुबह होने वाली है 🌄", "Almost sunrise 🌅": "बस सूरज निकलने वाला है 🌅", "Suraj nikal aaya! ☀️": "सूरज निकल आया! ☀️", "Good morning! Fresh start, fresh CV ☀️": "सुप्रभात! नई शुरुआत, नया CV ☀️", "Lunch break? Perfect time to polish your CV 🍱": "लंच ब्रेक? CV चमकाने का सही समय 🍱", "Good evening! Chai + CV = perfect combo ☕": "शुभ संध्या! चाय + CV = परफ़ेक्ट जोड़ी ☕", "Late-night prep mode on 🌙 We're with you.": "देर रात की तैयारी चालू 🌙 हम आपके साथ हैं।", "Namaste! Main Karo hoon 👋": "नमस्ते! मैं Karo हूँ 👋", "Pehle apna naam aur contact details likho. Main har step pe help karunga.": "पहले अपना नाम और कॉन्टैक्ट डिटेल्स लिखो। मैं हर स्टेप पर मदद करूँगा।", "Yeh aapki journey hai 🌙→☀️": "यह आपका सफ़र है 🌙→☀️", "Har section bharte hi suraj ugta hai. 100% tak pahuncho aur sticker jeeto!": "हर सेक्शन भरते ही सूरज उगता है। 100% तक पहुँचो और स्टिकर जीतो!", "Apna style chuno 🎨": "अपना स्टाइल चुनो 🎨", "Yahan 16 templates, colours aur spacing badal sakte ho, bina dobara type kiye.": "यहाँ 16 टेम्पलेट्स, रंग और स्पेसिंग बदल सकते हो, बिना दोबारा लिखे।", "Ho gaya? Download karo! 📄": "हो गया? डाउनलोड करो! 📄", "Ek click mein clean PDF, ATS-friendly aur bilkul free. All the best!": "एक क्लिक में साफ़ PDF, ATS-फ़्रेंडली और बिल्कुल मुफ़्त। ऑल द बेस्ट!", "Next": "आगे", "Shuru karein!": "शुरू करें!", "Skip": "छोड़ें", "Pehli baar CV bana rahe ho?": "पहली बार CV बना रहे हो?", "No problem. Answer a few simple questions, one at a time, and CVkaro builds your CV for you. It takes about 5 minutes.": "कोई बात नहीं। एक-एक करके कुछ आसान सवालों के जवाब दें, CVkaro आपका CV बना देगा। लगभग 5 मिनट लगते हैं।", "Haan, shuru karein →": "हाँ, शुरू करें →", "I have work experience, use the full builder": "मेरे पास अनुभव है, पूरा बिल्डर इस्तेमाल करूँगा", "Or import your old resume": "या अपना पुराना रिज़्यूमे इम्पोर्ट करें", "Aapka naam kya hai?": "आपका नाम क्या है?", "And which job are you aiming for?": "और आप कौन-सी जॉब चाहते हैं?", "Job you want": "जो जॉब चाहिए", "Or type your own": "या खुद लिखें", "← Back": "← पीछे", "Next →": "आगे →", "Next (or skip) →": "आगे (या छोड़ें) →", "Recruiters aapse kaise contact karein?": "रिक्रूटर्स आपसे कैसे संपर्क करें?", "Use a professional email. Your phone with +91 works best.": "प्रोफ़ेशनल ईमेल इस्तेमाल करें। फ़ोन नंबर +91 के साथ सबसे अच्छा है।", "City, state": "शहर, राज्य", "LinkedIn / GitHub (optional)": "LinkedIn / GitHub (वैकल्पिक)", "Padhai ke baare mein batao 📚": "पढ़ाई के बारे में बताओ 📚", "Your latest degree first. Add 12th or diploma too if you're a fresher.": "पहले अपनी सबसे नई डिग्री। फ्रेशर हैं तो 12वीं या डिप्लोमा भी जोड़ें।", "Degree / course": "डिग्री / कोर्स", "College / university": "कॉलेज / यूनिवर्सिटी", "CGPA / percentage": "CGPA / प्रतिशत", "Add 12th / diploma": "12वीं / डिप्लोमा जोड़ें", "Class / course": "कक्षा / कोर्स", "School / board": "स्कूल / बोर्ड", "Year": "साल", "Percentage": "प्रतिशत", "Koi project kiya hai? 🛠️": "कोई प्रोजेक्ट किया है? 🛠️", "College projects, mini projects and personal projects all count. Recruiters love them for freshers.": "कॉलेज, मिनी और पर्सनल प्रोजेक्ट्स सब गिने जाते हैं। फ्रेशर्स के लिए रिक्रूटर्स इन्हें बहुत पसंद करते हैं।", "Tools used": "इस्तेमाल किए टूल्स", "What does it do? What did you build?": "यह क्या करता है? आपने क्या बनाया?", "Result or number (optional)": "नतीजा या नंबर (वैकल्पिक)", "+ Add another project": "+ एक और प्रोजेक्ट जोड़ें", "Internship ya part-time kaam kiya hai?": "इंटर्नशिप या पार्ट-टाइम काम किया है?", "Internships, freelancing, tuition or part-time jobs all count. It's fine if you haven't, so just skip.": "इंटर्नशिप, फ़्रीलांसिंग, ट्यूशन या पार्ट-टाइम जॉब सब गिने जाते हैं। नहीं किया तो कोई बात नहीं, छोड़ दें।", "Haan, kiya hai": "हाँ, किया है", "Nahi, abhi tak nahi": "नहीं, अभी तक नहीं", "Role": "रोल", "Company / organisation": "कंपनी / संस्था", "What did you do? (one point per line)": "आपने क्या किया? (हर लाइन में एक पॉइंट)", "Aapki skills kya hain? 💪": "आपकी स्किल्स क्या हैं? 💪", "Add": "जोड़ें", "Kuch aur jo aapko special banata hai? ⭐": "कुछ और जो आपको खास बनाता है? ⭐", "Certificates, competitions, volunteering, leadership. Tap any that apply.": "सर्टिफ़िकेट, प्रतियोगिताएँ, वॉलंटियरिंग, लीडरशिप। जो लागू हों उन पर टैप करें।", "Add details or anything else (one per line)": "विवरण या कुछ और जोड़ें (हर लाइन में एक)", "Yeh raha aapka summary ✍️": "यह रहा आपका समरी ✍️", "We wrote it from your answers. Read it, and change anything that doesn't sound like you.": "हमने इसे आपके जवाबों से लिखा है। पढ़ें, और जो आप जैसा न लगे उसे बदलें।", "Professional summary": "प्रोफ़ेशनल समरी", "↻ Write it again from my answers": "↻ मेरे जवाबों से फिर लिखें", "Last step! Template chuno 🎨": "आख़िरी स्टेप! टेम्पलेट चुनो 🎨", "All four are great for freshers. You can change it any time later.": "चारों फ्रेशर्स के लिए बढ़िया हैं। बाद में कभी भी बदल सकते हैं।", "Mera CV banao 🎉": "मेरा CV बनाओ 🎉", "Please enter your name to continue.": "आगे बढ़ने के लिए अपना नाम लिखें।", "This email looks incomplete. Please check it.": "यह ईमेल अधूरा लगता है। कृपया जाँचें।", "Strong match": "बढ़िया मैच", "Good, with gaps to fix": "अच्छा, कुछ कमियाँ सुधारनी हैं", "Needs work": "मेहनत चाहिए", "Weak match": "कमज़ोर मैच", "Out of 100. Aim for 70 or higher before you apply.": "100 में से। अप्लाई करने से पहले 70 या ज़्यादा का लक्ष्य रखें।", "Sections and contact": "सेक्शन और कॉन्टैक्ट", "Length": "लंबाई", "Keywords you have": "आपके पास मौजूद कीवर्ड", "Required skills you're missing": "ज़रूरी स्किल्स जो छूटी हैं", "Other keywords to add, if you have them": "और कीवर्ड, अगर आपके पास हों", "Checks": "जाँच", "Wah! Ekdum ready.": "वाह! एकदम तैयार।", "Your resume matches this job really well.": "आपका रिज़्यूमे इस जॉब से बहुत अच्छे से मैच करता है।", "Almost there!": "बस थोड़ा सा और!", "Fix the gaps below and you're ready to apply.": "नीचे की कमियाँ सुधारें और अप्लाई के लिए तैयार।", "Koi baat nahi.": "कोई बात नहीं।", "Let's fix it together, starting with the missing keywords.": "चलिए साथ मिलकर सुधारते हैं, छूटे कीवर्ड से शुरू करके।", "Chalo, shuru karte hain!": "चलो, शुरू करते हैं!", "Add the missing skills you really have, then check again.": "जो स्किल्स सच में आपके पास हैं वो जोड़ें, फिर दोबारा जाँचें।", "Email and phone number found": "ईमेल और फ़ोन नंबर मिल गए", "(★ = required)": "(★ = ज़रूरी)", "No bullet points found. List what you achieved in each role and project": "कोई पॉइंट नहीं मिला। हर रोल और प्रोजेक्ट में अपनी उपलब्धियाँ लिखें", "Keyword stuffing": "कीवर्ड स्टफ़िंग", "None yet": "अभी कोई नहीं", "All key sections are present": "सभी ज़रूरी सेक्शन मौजूद हैं", "Bullet points start with strong action verbs": "पॉइंट्स मज़बूत एक्शन वर्ब्स से शुरू होते हैं", "You mention every required skill we found": "आपने हर ज़रूरी स्किल का ज़िक्र किया है", "Shabash! 🎉 Your PDF is ready. All the best for your applications!": "शाबाश! 🎉 आपका PDF तैयार है। एप्लीकेशन्स के लिए शुभकामनाएँ!", "Example added. Replace it with your own details.": "उदाहरण जोड़ दिया। इसे अपनी जानकारी से बदलें।", "Suraj nikal aaya! ☀️ Your CV is complete. Download it now!": "सूरज निकल आया! ☀️ आपका CV पूरा है। अभी डाउनलोड करें!", "Shabash! 🎉 Your CV is ready. Check each section, then download your PDF.": "शाबाश! 🎉 आपका CV तैयार है। हर सेक्शन जाँचें, फिर PDF डाउनलोड करें।", "Photo added.": "फ़ोटो जुड़ गई।", "Email address copied.": "ईमेल पता कॉपी हो गया।", "UPI ID copied.": "UPI ID कॉपी हो गई।"}, HI_PH={"Your resume text appears here after upload, or paste it directly": "अपलोड के बाद रिज़्यूमे का टेक्स्ट यहाँ दिखेगा, या सीधे पेस्ट करें", "Filled in from the job description, or type it": "जॉब डिस्क्रिप्शन से भरा जाएगा, या खुद लिखें", "Paste the full job posting — responsibilities, requirements and skills": "पूरी जॉब पोस्टिंग पेस्ट करें — ज़िम्मेदारियाँ, ज़रूरतें और स्किल्स", "Paste the job posting. The AI uses it to match your letter to what the company wants.": "जॉब पोस्टिंग पेस्ट करें। AI इससे आपका लेटर कंपनी की ज़रूरत से मिलाता है।", "Write with AI, use the starter template, or type your own.": "AI से लिखें, स्टार्टर टेम्पलेट लें, या खुद लिखें।", "For a bug, tell us which page, what you clicked and what went wrong.": "बग के लिए बताएँ: कौन-सा पेज, क्या क्लिक किया और क्या गड़बड़ हुई।", "Who you are, your strongest skills and one result you're proud of.": "आप कौन हैं, आपकी सबसे मज़बूत स्किल्स और एक उपलब्धि जिस पर आपको गर्व है।", "Start with a verb and add a number": "किसी वर्ब से शुरू करें और एक नंबर जोड़ें", "Add another skill and press Enter": "एक और स्किल लिखें और Enter दबाएँ", "e.g. 150": "जैसे 150"};
+const HI_NEXT={"Add your name":"अपना नाम लिखें","Add your email and phone":"ईमेल और फ़ोन लिखें","Add the job title you want":"जो जॉब चाहिए उसका नाम लिखें","Write 1–2 more lines in your summary":"समरी में 1–2 लाइन और लिखें","Write a short summary":"एक छोटी समरी लिखें","Add 2+ bullet points to a job or project":"किसी जॉब या प्रोजेक्ट में 2+ पॉइंट लिखें","Add your education":"अपनी पढ़ाई जोड़ें","Add numbers to your bullet points (%, users, ₹)":"अपने पॉइंट्स में नंबर जोड़ें (%, यूज़र्स, ₹)"};
+const HI_RX=[
+  [/^Step (\d+) of (\d+)$/,(m,a,b)=>`स्टेप ${a} / ${b}`],
+  [/^(\d+) selected$/,(m,a)=>`${a} चुने गए`],
+  [/^(\d+) of (\d+) collected$/,(m,a,b)=>`${b} में से ${a} मिले`],
+  [/^(\d+)% complete( · Your CV is ready to download!)?$/,(m,a,b)=>`${a}% पूरा${b?" · आपका CV डाउनलोड के लिए तैयार है!":""}`],
+  [/^(.+?, )?(Raat 2 baje 🌙|Taiyari jaari hai 📚|Subah hone wali hai 🌄|Almost sunrise 🌅|Suraj nikal aaya! ☀️)$/,(m,a,b)=>`${a||""}${HI[b]}`],
+  [/^Next: Add (\d+) more skills? →$/,(m,a)=>`अगला: ${a} और स्किल्स जोड़ें →`],
+  [/^Next: (.+) →$/,(m,a)=>HI_NEXT[a]?`अगला: ${HI_NEXT[a]} →`:m],
+  [/^Raat ke (\d+) baje bhi mehnat\? Respect\. ☕$/,(m,a)=>`रात के ${a} बजे भी मेहनत? सलाम। ☕`],
+  [/^(Position|Project|Qualification) (\d+)$/,(m,a,b)=>({Position:"पद",Project:"प्रोजेक्ट",Qualification:"योग्यता"})[a]+" "+b],
+  [/^Edited (just now|yesterday|(\d+) (min|hr|days) ago)( · Open now)?$/,(m,a,n,u,o)=>`बदला गया: ${a==="just now"?"अभी":a==="yesterday"?"कल":`${n} ${({min:"मिनट",hr:"घंटे",days:"दिन"})[u]} पहले`}${o?" · अभी खुला है":""}`],
+  [/^(\d+) pages? — (try the Spacing slider or trim text to fit one page|shorten your letter to fit one page)$/,(m,a,b)=>`${a} पेज — ${b.startsWith("try")?"स्पेसिंग स्लाइडर इस्तेमाल करें या टेक्स्ट कम करें":"एक पेज में लाने के लिए लेटर छोटा करें"}`],
+  [/^1 page$/,()=>"1 पेज"],
+  [/^for (.+)$/,(m,a)=>`${a} के लिए`],
+  [/^(.+) template$/,(m,a)=>`${a} टेम्पलेट`],
+  [/^💡 Point (\d+) starts with “(.+)”\. Start with what you did: Built, Led, Improved, Reduced\.$/,(m,a,b)=>`💡 पॉइंट ${a} “${b}” से शुरू होता है। जो आपने किया उससे शुरू करें: Built, Led, Improved, Reduced.`],
+  [/^💡 Add numbers to more points .+$/,()=>"💡 ज़्यादा पॉइंट्स में नंबर जोड़ें (कितने यूज़र्स, कितना %, कितने ₹ या समय बचा)। रिक्रूटर्स नंबरों पर भरोसा करते हैं।"],
+  [/^💡 Point (\d+) is long\. Keep each point under 25 words\.$/,(m,a)=>`💡 पॉइंट ${a} लंबा है। हर पॉइंट 25 शब्दों से कम रखें।`],
+  [/^✓ Strong bullet points 👍$/,()=>"✓ बढ़िया पॉइंट्स 👍"],
+  [/^💡 Resumes skip “I”\..+$/,()=>"💡 रिज़्यूमे में “I” नहीं लिखते। अपने रोल से शुरू करें, जैसे “Frontend developer who…”"],
+  [/^💡 Add one more line: .+$/,()=>"💡 एक लाइन और जोड़ें: आपको कौन-सा रोल चाहिए और आपकी 2–3 मुख्य स्किल्स।"],
+  [/^💡 Your summary is (\d+) words\. Keep it under 80\.$/,(m,a)=>`💡 आपकी समरी ${a} शब्दों की है। इसे 80 से कम रखें।`],
+  [/^✓ Great summary length 👍$/,()=>"✓ समरी की लंबाई बढ़िया है 👍"],
+  [/^💡 Add at least 5 skills \(you have (\d+)\)\..*$/,(m,a)=>`💡 कम से कम 5 स्किल्स जोड़ें (अभी ${a} हैं)। इन्हें कॉमा से अलग करें।`],
+  [/^💡 You have (\d+) skills\. Keep your 15–25 strongest\.$/,(m,a)=>`💡 आपके पास ${a} स्किल्स हैं। सबसे मज़बूत 15–25 रखें।`],
+  [/^✓ (\d+) skills\. Nice balance 👍$/,(m,a)=>`✓ ${a} स्किल्स। बढ़िया संतुलन 👍`],
+  [/^💡 This email looks incomplete\.$/,()=>"💡 यह ईमेल अधूरा लगता है।"],
+  [/^💡 Use a professional email, like (.+)\.$/,(m,a)=>`💡 प्रोफ़ेशनल ईमेल इस्तेमाल करें, जैसे ${a}`],
+  [/^Tap the ones you really know(?: \(suggested for (.+)\))?\. 8 to 15 is a good number\.$/,(m,a)=>`जो सच में आती हैं उन पर टैप करें${a?` (${a} के लिए सुझाई गई)`:""}। 8 से 15 अच्छी संख्या है।`],
+  [/^Good length \((\d+) words\)$/,(m,a)=>`अच्छी लंबाई (${a} शब्द)`],
+  [/^(\d+) of (\d+) bullet points include numbers — strong proof of impact$/,(m,a,b)=>`${b} में से ${a} पॉइंट्स में नंबर हैं — असर का अच्छा सबूत`],
+  [/^Your resume uses the job title "(.+)"$/,(m,a)=>`आपके रिज़्यूमे में जॉब टाइटल "${a}" है`],
+  [/^Add the job title "(.+)" to your headline or summary — recruiters often search by title first$/,(m,a)=>`जॉब टाइटल "${a}" अपनी हेडलाइन या समरी में जोड़ें — रिक्रूटर्स अक्सर पहले टाइटल से ढूँढते हैं`],
+  [/^Only (\d+) of (\d+) bullet points include a number\. .+$/,(m,a,b)=>`${b} में से सिर्फ़ ${a} पॉइंट्स में नंबर है। "by 25%" या "for 500 users" जैसे नतीजे जोड़ें`],
+  [/^(\d+) bullet points? starts? with weak phrases .+$/,(m,a)=>`${a} पॉइंट्स कमज़ोर शब्दों ("Responsible for", "Worked on") से शुरू होते हैं। जो किया उससे शुरू करें: Built, Led, Improved`],
+  [/^(\d+) bullet points? (?:doesn't|don't) start with an action verb.+$/,(m,a)=>`${a} पॉइंट्स किसी एक्शन वर्ब (Built, Led, Improved) से शुरू नहीं होते`],
+  [/^Your resume is short \((\d+) words\)\..+$/,(m,a)=>`आपका रिज़्यूमे छोटा है (${a} शब्द)। अपने काम की ज़्यादा जानकारी के साथ 300–800 शब्दों का लक्ष्य रखें`],
+  [/^Your resume is long \((\d+) words\)\..+$/,(m,a)=>`आपका रिज़्यूमे लंबा है (${a} शब्द)। इसे एक-दो पेज का करें`],
+  [/^Missing (\d+) required skills?: (.+)\. Add them if you have them$/,(m,a,b)=>`${a} ज़रूरी स्किल्स छूटी हैं: ${b}। अगर आपके पास हैं तो जोड़ें`],
+  [/^Missing sections?: (.+)$/,(m,a)=>`ये सेक्शन नहीं हैं: ${a}`],
+  [/^Add your (email and phone|email|phone number) so recruiters can contact you$/,(m,a)=>`अपना ${({"email and phone":"ईमेल और फ़ोन","email":"ईमेल","phone number":"फ़ोन नंबर"})[a]} जोड़ें ताकि रिक्रूटर्स संपर्क कर सकें`],
+  [/^"(.+)" appears (\d+) times\. .+$/,(m,a,b)=>`"${a}" ${b} बार आया है। बार-बार कीवर्ड लिखना रिक्रूटर्स को स्टफ़िंग जैसा लगता है`],
+  [/^You list (\d+) skills\. .+$/,(m,a)=>`आपने ${a} स्किल्स लिखी हैं। सबसे मज़बूत 15–25 रखें ताकि ज़रूरी स्किल्स दिखें`]
+];
+let LANG=(()=>{ try{ return localStorage.getItem("cvk-lang")||"en"; }catch{ return "en"; } })();
+const I18N_ORIG=new WeakMap();
+const I18N_SKIP=".cv,#printArea,script,style,textarea,.thumb,[data-noi18n],.phr-list,.fz-chips [data-sk],.wm,.logo";
+function trHi(t){ const k=t.replace(/\s+/g," ").trim(); if(!k) return null; if(HI[k]) return HI[k]; for(const [r,f] of HI_RX){ if(r.test(k)){ const o=k.replace(r,f); return o!==k?o:null; } } return null; }
+function trNode(n){
+  const el=n.parentElement; if(!el||el.closest(I18N_SKIP)) return;
+  const v=n.nodeValue, h=trHi(v); if(!h) return;
+  const lead=v.match(/^\s*/)[0], trail=v.match(/\s*$/)[0];
+  I18N_ORIG.set(n,v); n.nodeValue=lead+h+trail;
+}
+function trTree(root){
+  if(LANG!=="hi"||!root) return;
+  if(root.nodeType===3){ trNode(root); return; }
+  if(root.nodeType!==1||root.closest?.(I18N_SKIP)) return;
+  const w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT); const list=[]; while(w.nextNode()) list.push(w.currentNode); list.forEach(trNode);
+  (root.matches?.("[placeholder]")?[root]:[]).concat([...root.querySelectorAll?.("[placeholder]")||[]]).forEach(e=>{ const p=e.getAttribute("placeholder"); if(HI_PH[p]){ e.dataset.phEn=p; e.setAttribute("placeholder",HI_PH[p]); } });
+}
+function untrAll(){
+  const w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT); while(w.nextNode()){ const n=w.currentNode; if(I18N_ORIG.has(n)){ n.nodeValue=I18N_ORIG.get(n); I18N_ORIG.delete(n); } }
+  document.querySelectorAll("[data-ph-en]").forEach(e=>{ e.setAttribute("placeholder",e.dataset.phEn); delete e.dataset.phEn; });
+}
+const i18nObs=new MutationObserver(ms=>{ if(LANG!=="hi") return; for(const m of ms){ if(m.type==="characterData") trNode(m.target); else m.addedNodes.forEach(trTree); } });
+function setLang(l){
+  LANG=l; try{ localStorage.setItem("cvk-lang",l); }catch{}
+  document.documentElement.lang=l==="hi"?"hi":"en";
+  document.documentElement.classList.toggle("lang-hi",l==="hi");
+  $("langBtn").textContent=l==="hi"?"EN":"हिंदी"; $("langBtn").setAttribute("aria-label",l==="hi"?"Switch to English":"हिंदी में देखें");
+  if(l==="hi"){ trTree(document.body); i18nObs.observe(document.body,{subtree:true,childList:true,characterData:true}); }
+  else { i18nObs.disconnect(); untrAll(); }
+}
+$("langBtn").onclick=()=>{ setLang(LANG==="hi"?"en":"hi"); toast(LANG==="hi"?"अब हिंदी में! आपका रिज़्यूमे अंग्रेज़ी में ही रहेगा, जैसा रिक्रूटर्स चाहते हैं।":"Switched to English."); };
+
 /* ================= ROUTER ================= */
 function route(){
+  if(tourI>=0&&!location.hash.includes("builder")){ tourI=-1; $("tour").hidden=true; document.querySelectorAll(".tour-hl").forEach(x=>x.classList.remove("tour-hl")); }
   let h=location.hash.replace(/^#\/?/,""); let anchor=null;
   if(h.startsWith("#")){ anchor=h.slice(1); h=""; }
-  const v=["templates","builder","ats","privacy","about","resumes","cover","scoring","terms","contact","support"].includes(h)?h:"home";
+  const v=["templates","builder","ats","privacy","about","resumes","cover","scoring","terms","contact","support","fresher"].includes(h)?h:"home";
   document.querySelectorAll(".view").forEach(x=>x.classList.toggle("on",x.id==="v-"+v));
   document.querySelectorAll("[data-nav]").forEach(a=>{ if(a.dataset.nav===v) a.setAttribute("aria-current","page"); else a.removeAttribute("aria-current"); });
   document.querySelector("footer").style.display = (v==="builder"||v==="cover")?"none":"";
   mountPageArt(); if(v==="home") mountArt();
   if(anchor){ requestAnimationFrame(()=>requestAnimationFrame(()=>document.getElementById(anchor)?.scrollIntoView({behavior:"smooth"}))); } else window.scrollTo(0,0);
-  requestAnimationFrame(()=>{ document.querySelectorAll("[data-thumb]").forEach(scaleThumb); if(v==="builder"){ $("docName").value=curDoc().name; renderContent(); renderPreview(); if(!$("tabDesign").hidden) renderDesign(); if(!$("jbarWalker").innerHTML) $("jbarWalker").innerHTML=ART.mascot("wave",30); updateJourney(); if(new Date().getHours()<5) award("night-owl"); setTimeout(()=>{ if(location.hash.includes("builder")) startTour(); },700); } if(v==="resumes") renderResumes(); if(v==="support") renderSupport(); if(v==="ats") renderAtsPick(); if(v==="cover"){ renderCoverForm(); renderCoverPv(); } mountPageArt(); if(v==="home") mountArt(); });
+  requestAnimationFrame(()=>{ document.querySelectorAll("[data-thumb]").forEach(scaleThumb); if(v==="builder"){ $("docName").value=curDoc().name; renderContent(); renderPreview(); if(!$("tabDesign").hidden) renderDesign(); if(!$("jbarWalker").innerHTML) $("jbarWalker").innerHTML=ART.mascot("wave",30); updateJourney(); if(new Date().getHours()<5) award("night-owl"); setTimeout(()=>{ if(location.hash.includes("builder")) startTour(); },700); } if(v==="resumes") renderResumes(); if(v==="fresher") fzRender(); if(v==="support") renderSupport(); if(v==="ats") renderAtsPick(); if(v==="cover"){ renderCoverForm(); renderCoverPv(); } mountPageArt(); if(v==="home") mountArt(); });
 }
 window.addEventListener("hashchange",route);
 
@@ -2496,8 +2771,11 @@ function heroAnim(){
 }
 
 /* ================= INIT ================= */
+if("scrollRestoration" in history) history.scrollRestoration="manual";
+window.scrollTo(0,0);
 renderGalleries();
 route();
+if(LANG==="hi") setLang("hi");
 (async()=>{ try{ sample=await window.claude?.use("sample"); }catch{} if(!sample){ $("proNote").textContent="Coming soon"; const pb=$("proBtn"); pb.textContent="Coming soon"; pb.removeAttribute("href"); pb.setAttribute("aria-disabled","true"); pb.style.opacity=".55"; pb.style.pointerEvents="none"; $("faqPro").textContent="AI-powered Pro features are coming soon."; } if(location.hash.includes("builder")) renderContent(); if(location.hash.includes("cover")) renderCoverForm(); })();
 (async()=>{ try{ downloads=await window.claude?.use("downloads"); }catch{} })();
 </script>
