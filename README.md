@@ -1,4 +1,4 @@
-# CVkaro — Free ATS resume builder & checker
+# CVkaro™ — Free ATS resume builder & checker
 
 **CV banao. Shortlist ho jao.**
 
@@ -34,7 +34,7 @@ it as a clean PDF — free, with no sign-up.
 - Plain HTML, CSS and JavaScript in a single page — no framework, no build step
 - PDF reading: pdf.js · Word reading: mammoth.js
 - PDF creation: jsPDF + html2canvas with a custom text layer
-- Hosted on Cloudflare workers
+- Hosted on Cloudflare Pages
 
 ## Privacy
 
@@ -43,4 +43,4 @@ server-side storage of personal data.
 
 ## Copyright
 
-© 2026 CVkaro. All rights reserved. See [LICENSE](LICENSE).
+© 2026 CVkaro™. All rights reserved. See [LICENSE](LICENSE).
