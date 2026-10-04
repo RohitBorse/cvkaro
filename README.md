@@ -10,7 +10,7 @@ it as a clean PDF — free, with no sign-up.
 
 ## Features
 
-- **16 original resume templates** — from traditional (Scholar, Classic) to
+- **22 original resume templates** — from traditional (Scholar, Classic) to
   modern (Banner, Timeline) and creative (Slate, Monogram), with 10 accent
   colours and a spacing control to fit one page.
 - **Resume builder** with live A4 preview, page-break warnings, section
